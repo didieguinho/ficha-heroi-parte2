@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Valkheim — Ficha de Herói">
+<title>Valkheim | Ficha de Herói</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+
+<body>
+
+<header class="cabecalho">
+    <a href="#inicio" class="logo"><span>ᛉ</span> VALKHEIM</a>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menu" aria-controls="menu" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+    <nav class="menu" id="menu">
+        <a href="#sobre">Sobre</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#inventario">Inventário</a>
+        <a href="#contato">Guilda</a>
+    </nav>
+</header>
+
+<main>
+
+<section class="hero" id="inicio">
+    <div class="hero-fundo"></div>
+    <div class="hero-conteudo">
+        <div class="hero-texto">
+            <p class="eyebrow"><i class="fa-solid fa-shield-halved"></i> HERDEIRO DE ASGARD</p>
+            <p class="saudacao" id="saudacao"></p>
+            <h1>VALK<span>HEIM</span></h1>
+            <h2>O GUERREIRO QUE ROMPE O TEMPO</h2>
+            <p class="descricao">Paolo Rodriguez, conhecido como Valkheim, é um guerreiro capaz de manipular o fluxo temporal através do lendário machado Skåld. Um herdeiro de Asgard destinado a enfrentar forças além da compreensão humana.</p>
+            <div class="botoes">
+                <a href="#sobre" class="botao">CONHECER O HERÓI</a>
+                <a href="#inventario" class="botao">VER SKÅLD</a>
+            </div>
+        </div>
+
+        <div class="hero-personagem">
+            <div class="moldura">
+                <span>ᚠ</span><span>ᛏ</span><span>ᛟ</span><span>ᚦ</span>
+                <img src="imagens/valkheim.png" alt="Valkheim">
+            </div>
+            <div class="xp-area">
+                <div class="xp-topo"><span>EXPERIÊNCIA</span><strong id="xpTexto">0 / 100 XP</strong></div>
+                <div class="xp-barra"><div class="xp-progresso" id="xpProgresso"></div></div>
+                <div class="xp-controles">
+                    <button type="button" class="botao-acao" id="ganharXP"><i class="fa-solid fa-bolt"></i> COMPLETAR MISSÃO +25 XP</button>
+                    <div class="nivel">NÍVEL <strong id="nivelAtual">1</strong></div>
+                    <button type="button" class="botao-reiniciar" id="reiniciarXP"><i class="fa-solid fa-rotate-left"></i> REINICIAR PROGRESSO</button>
+                </div>
+                <p class="aviso" id="avisoXP" aria-live="polite"></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="secao card" id="sobre">
+    <div class="titulo"><span>01</span><h2>O HERDEIRO</h2></div>
+    <p><strong>Valkheim</strong>, cujo verdadeiro nome é Paolo Rodriguez, é um guerreiro marcado por uma ligação misteriosa com as forças de Asgard.</p>
+    <p>Diferente dos guerreiros que dependem apenas de força física, Valkheim domina uma habilidade rara: a capacidade de interferir no próprio fluxo do tempo.</p>
+    <p>Seu principal artefato é o <strong>Skåld</strong>, um machado ancestral capaz de alterar momentos temporais e criar possibilidades que desafiam as leis da realidade.</p>
+    <p>Seu objetivo é descobrir a verdadeira origem de seus poderes e impedir que forças capazes de destruir a própria linha temporal alcancem o mundo humano.</p>
+
+    <div id="historiaExtra" class="historia-extra" hidden>
+    <p>Paolo Rodriguez, filho de Thor e Jane Foster, teve sua existência apagada da memória de Thor por um feitiço de Loki após a morte de Jane. Criado em um orfanato no Brasil, Paolo cresceu sem conhecer sua origem e sem aparentar possuir poderes.
+    <p>Aos 18 anos, o feitiço foi quebrado quando Thor derrotou Loki, revelando a existência de seu filho. Levado para Asgard, Paolo descobriu sua herança divina e desenvolveu um poder raro: manipulação do tempo. Para controlar esse poder, recebeu Skåld, um lendário machado capaz de amplificar suas habilidades temporais. Após seu treinamento, Paolo assumiu a identidade de Valkheim, tornando-se um herói e protetor de Midgard ao lado dos Vingadores.</p>
+    <p>Sua maior habilidade não era sua força ou o machado, mas a capacidade de alterar o próprio curso dos acontecimentos, chegando a dominar o poderoso Corte do Destino.</p>
+    </div>
+    <button type="button" class="botao-acao" id="verHistoria" aria-expanded="false">VER HISTÓRIA COMPLETA <i class="fa-solid fa-chevron-down"></i></button>
+
+    <div class="ficha">
+        <div><small>NOME</small><strong>Paolo Rodriguez</strong></div>
+        <div><small>TÍTULO</small><strong>Guerreiro Temporal</strong></div>
+        <div><small>ORIGEM</small><strong>Terra / Asgard</strong></div>
+        <div><small>ARMA</small><strong>Skåld</strong></div>
+        <div><small>CLASSE</small><strong>Herdeiro</strong></div>
+    </div>
+</section>
+
+<section class="secao card" id="habilidades">
+    <div class="titulo"><span>02</span><h2>HABILIDADES</h2></div>
+
+    <h3>ATRIBUTOS</h3>
+
+    <div class="atributo">
+        <div><span>FORÇA</span><b>90</b></div>
+        <i><span style="width:90%"></span></i>
+    </div>
+
+    <div class="atributo">
+        <div><span>DEFESA</span><b>85</b></div>
+        <i><span style="width:85%"></span></i>
+    </div>
+
+    <div class="atributo">
+        <div><span>VELOCIDADE</span><b>80</b></div>
+        <i><span style="width:80%"></span></i>
+    </div>
+
+    <div class="atributo">
+        <div><span>MANIPULAÇÃO TEMPORAL</span><b>98</b></div>
+        <i><span style="width:98%"></span></i>
+    </div>
+
+    <h3>PODERES</h3>
+
+    <div class="poderes">
+        <article><b>01</b><div><strong>RUPTURA TEMPORAL</strong><p>Valkheim pode interromper o fluxo do tempo por alguns instantes, criando uma abertura para atacar ou escapar.</p></div></article>
+        <article><b>02</b><div><strong>RETROCESSO</strong><p>Permite retornar brevemente ao estado anterior de uma situação, desfazendo acontecimentos recentes.</p></div></article>
+        <article><b>03</b><div><strong>VISÃO TEMPORAL</strong><p>Valkheim consegue enxergar possíveis acontecimentos futuros e identificar diferentes caminhos temporais.</p></div></article>
+        <article><b>04</b><div><strong>FÚRIA DE SKÅLD</strong><p>O machado libera sua energia temporal, aumentando drasticamente o poder dos golpes de Valkheim.</p></div></article>
+    </div>
+</section>
+
+<section class="secao card" id="inventario">
+    <div class="titulo"><span>03</span><h2>INVENTÁRIO</h2></div>
+
+    <div class="inventario-topo">
+        <p id="contadorItens">0 itens conquistados</p>
+        <p id="contadorFavoritos">0 favoritos</p>
+    </div>
+    <div class="filtros" id="filtros" aria-label="Filtrar inventário">
+        <button type="button" class="filtro ativo" data-tipo="todos" aria-pressed="true">Todos</button>
+        <button type="button" class="filtro" data-tipo="arma" aria-pressed="false">Armas</button>
+        <button type="button" class="filtro" data-tipo="reliquia" aria-pressed="false">Relíquias</button>
+        <button type="button" class="filtro" data-tipo="conquista" aria-pressed="false">Conquistas</button>
+    </div>
+    <div class="inventario" id="listaInventario"></div>
+    <p class="aviso inventario-aviso" id="avisoInventario" aria-live="polite"></p>
+</section>
+
+<section class="secao card" id="contato">
+    <div class="titulo"><span>04</span><h2>GUILDA</h2></div>
+    <p>Todo guerreiro precisa de uma guilda. Encontre Valkheim através de seus canais de contato e acompanhe sua jornada.</p>
+
+    <div class="contatos">
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=diegorodrigues010208@gmail.com&su=Contato%20-%20Valkheim" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-envelope"></i> Gmail</a>
+        <a href="tel:+5513999999999"><i class="fa-solid fa-phone"></i> Telefone</a>
+        <a href="https://github.com/didieguinho/ficha-heroi-parte2" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> GitHub</a>
+   </div>
+
+    <form class="form-guilda" id="formGuilda" novalidate>
+        <h3><i class="fa-regular fa-envelope"></i> ENVIAR MENSAGEM À GUILDA</h3>
+        <p>Preencha os dados abaixo para preparar sua mensagem.</p>
+        <div class="campos-linha">
+            <div class="campo">
+                <label for="nome">Seu nome <span>*</span></label>
+                <input type="text" id="nome" name="nome" autocomplete="name" placeholder="Como devemos chamar você?">
+                <small id="erroNome" class="erro-campo"></small>
+            </div>
+            <div class="campo">
+                <label for="email">Seu e-mail <span>*</span></label>
+                <input type="email" id="email" name="email" autocomplete="email" placeholder="nome@exemplo.com">
+                <small id="erroEmail" class="erro-campo"></small>
+            </div>
+        </div>
+        <div class="campo">
+            <label for="mensagem">Mensagem <span>*</span></label>
+            <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem para Valkheim..."></textarea>
+            <small id="erroMensagem" class="erro-campo"></small>
+        </div>
+        <button class="botao-enviar" type="submit"><i class="fa-solid fa-paper-plane"></i> PREPARAR E-MAIL</button>
+        <p class="form-aviso" id="avisoFormulario" role="status" aria-live="polite"></p>
+        <p class="nota-email">O envio será feito pelo seu aplicativo de e-mail após sua confirmação.</p>
+    </form>
+</section>
+
+</main>
+
+<footer>
+    <p>© 2026 VALKHEIM — O GUERREIRO QUE ROMPE O TEMPO</p>
+    <p>ᛉ FORJADO EM ASGARD ᛉ</p>
+    <button type="button" class="botao-tema" id="alternarTema"><i class="fa-solid fa-moon"></i> MODO NOTURNO</button>
+</footer>
+
+<button type="button" class="voltar-topo" id="voltarTopo" aria-label="Voltar ao início"><i class="fa-solid fa-arrow-up"></i></button>
+</body>
+</html>
